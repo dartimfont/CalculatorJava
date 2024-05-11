@@ -7,7 +7,7 @@ public class Main {
         try {
             Calculator calculator = new Calculator();
 
-            calculator.setLine("1 + 2");
+            calculator.setLine("I + III");
             calculator.run();
 
             calculator.setLine("VI / III");

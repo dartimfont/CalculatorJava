@@ -53,6 +53,9 @@ public class Calculator {
 
         } else {
 
+            checkRimNum(parts[0], "Первое");
+            checkRimNum(parts[2], "Второе");
+
             int first = rimToArab(parts[0]);
             String operand = parts[1];
             int second = rimToArab(parts[2]);
@@ -71,6 +74,15 @@ public class Calculator {
 
     public void setLine(String line) {
         this.line = line;
+    }
+
+    public void checkRimNum(String rimNum, String name) throws Exception {
+        for (int i = 0; i < rimNum.length(); i++) {
+            String ch = Character.toString(rimNum.charAt(i));
+            if (!mapRimToArab.containsKey(ch)) {
+                throw new Exception(name + " число не явл римским");
+            }
+        }
     }
 
     public int rimToArab(String numRim) {
